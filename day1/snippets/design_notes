@@ -1,0 +1,21 @@
+Date: Sun, 23 Sep 2007 23:33:41 -0700
+From: "Robert Griesemer" <gri@google.com>
+To: "Rob 'Commander' Pike" <r@google.com>, ken@google.com
+Subject: prog lang discussion
+
+Starting point: C, fix some obvious flaws, remove crud, add a few missing features
+  - no includes, instead: import
+  - no macros (do we need something instead?)
+  - ideally only one file instead of a .h and .c file, module interface should be
+    extracted automatically
+  - statements: like in C, though should fix 'switch' statement
+  - expressions: like in C, though with caveats (do we need ',' expressions?)
+  - essentially strongly typed, but probably w/ support for runtime types
+  - want arrays with bounds checking on always (except perhaps in 'unsafe mode'-see section on GC)
+  - mechanism to hook up GC (I think that most code can live w/ GC, but for a true systems
+    programming language there should be mode w/ full control over memory allocation)
+  - support for interfaces (differentiate between concrete, or implementation types, and
+    abstract, or interface types)
+  - support for nested and anonymous functions/closures (don't pay if not used)
+  - a simple compiler should be able to generate decent code
+  - the various language mechanisms should result in predictable code

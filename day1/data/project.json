@@ -1,0 +1,14 @@
+{
+  "name" : "A new project",
+  "homepage" : "http://new.example.com",
+  "members" : [
+    {
+      "id" : 42,
+      "mail" : "jim@example.com"
+    },
+    {
+      "id" : 99,
+      "mail" : "jane@example.com"
+    }
+  ]
+}

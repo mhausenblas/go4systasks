@@ -1,0 +1,296 @@
+Day 1: Let’s Go! Using the Go programming language for system tasks
+http://301.sh
+09:00 1 Oct 2017
+Tags: Go, programming, tutorial
+
+Michael Hausenblas
+Developer Advocate, Red Hat
+http://mhausenblas.info
+@mhausenblas
+
+* Agenda
+
+- Why Go?
+- Walkthrough
+- Advanced stuff
+- Gophers exchange
+- DIY
+
+* Why Go?
+
+
+* Why Go?
+
+.background img/gopher_head.png
+
+- History
+- Language features
+- Community
+- Tooling
+
+* History
+
+.code snippets/design_notes
+
+[[https://talks.golang.org/2015/gophercon-goevolution.slide][More …]]
+
+* History
+
+.image img/influences.png 500 _
+
+* Language features
+
+* Language features
+
+- Statically typed, compiled
+- Native binaries (Linux, macOS, Windows)
+- Garbage collected
+- Comprehensive [[https://golang.org/pkg/][standard lib]]
+- Concurrency a 1st-class citizen
+- No magic
+
+* Community
+
+* Discussions
+
+.background img/community.png
+
+When you need help, want to ask or discuss something …
+
+.link https://groups.google.com/forum/#!forum/golang-nuts golang-nuts@googlegroups.com
+.link https://invite.slack.golangbridge.org/ gophers.slack.com
+.link https://www.reddit.com/r/golang/ /r/golang on Reddit
+.link http://stackoverflow.com/questions/tagged/go #go on StackOverflow
+
+* News
+
+.background img/community.png
+
+When you want to learn about new developments, exchange thoughts and meet other Gophers …
+
+.link https://www.youtube.com/user/gocoding Go channel on YouTube
+.link https://www.gophercon.com/ gophercon.com
+.link https://www.dotgo.eu/ dotgo.eu
+.link https://golangweekly.com/ golangweekly.com
+
+* Tooling
+
+* Tooling
+
+From build to test:
+
+      build       compile packages and dependencies
+      clean       remove object files
+      doc         show documentation for package or symbol
+      env         print Go environment information
+      bug         start a bug report
+      fix         run go tool fix on packages
+      fmt         run gofmt on package sources
+      generate    generate Go files by processing source
+      get         download and install packages and dependencies
+      install     compile and install packages and dependencies
+      list        list packages
+      run         compile and run Go program
+      test        test packages
+      tool        run specified go tool
+      version     print Go version
+      vet         run go tool vet on packages
+
+* Tooling
+
+For simple, one-shot execution:
+
+  $ go run main.go
+
+For non-trivial, standalone programs:
+
+  $ go install
+
+For libraries:
+
+  $ go build
+
+* Walkthrough
+
+* Follow along
+
+Online: no set up required but limited
+
+Local:
+
+  $ git clone https://github.com/mhausenblas/letsgo && cd letsgo
+  $ go run snippets/sXX/main.go
+
+_Note_: examples that may only work in local mode are marked with *
+
+* Hello World!
+
+.play -numbers snippets/s00/main.go
+
+* A more realistic Hello World!*
+
+.play -numbers snippets/s01/main.go
+
+* Slices
+
+.play -numbers snippets/s02/main.go
+
+* Maps
+
+.play -numbers snippets/s03/main.go
+
+* Structs
+
+.code -numbers snippets/s04/main.go /BEGINS/,/ENDS/
+
+* Structs
+
+.play -numbers snippets/s04/main.go /BEGINC/,/ENDC/
+
+* Functions
+
+.code -numbers snippets/s05/main.go /BEGIND/,/ENDD/
+.play -numbers snippets/s05/main.go /BEGINC/,/ENDC/
+
+* Methods
+
+.code -numbers snippets/s06/main.go /BEGIND/,/ENDD/
+.play -numbers snippets/s06/main.go /BEGINC/,/ENDC/
+
+* Errors
+
+.code -numbers snippets/s07/main.go /BEGIND/,/ENDD/
+.play -numbers snippets/s07/main.go /BEGINC/,/ENDC/
+
+* Interfaces
+
+.play -numbers snippets/s08/main.go /BEGIN/,/END/
+
+* Files - Reading*
+
+.play -numbers snippets/s09/main.go
+
+.link https://gobyexample.com/reading-files More …
+
+* Files - Writing*
+
+.play -numbers snippets/s10/main.go /BEGIN/,/END/
+
+.link https://gobyexample.com/writing-files More …
+
+* Files - Advanced*
+
+.code -numbers snippets/s11/main.go /BEGIND/,/ENDD/
+.play -numbers snippets/s11/main.go /BEGINC/,/ENDC/
+
+
+* Simple service with a HTTP API*
+
+.code -numbers snippets/s12/main.go
+
+* Simple service with a HTTP API*
+
+In one terminal:
+
+  $ go run snippets/s12/main.go
+
+And in another session:
+
+  $ curl localhost:9876/data
+  {"title":"The Let's Go workshop","count":33}
+
+* Others
+
+- [[https://tour.golang.org/concurrency/1][Concurrency]]
+- [[https://gobyexample.com/time-formatting-parsing][Time Formatting/Parsing]]
+- [[https://github.com/golang/go/wiki/TableDrivenTests][Testing]]
+
+* Advanced stuff
+
+* Development
+
+Starting point: [[https://golang.org/doc/code.html][How to Write Go Code]]
+
+To learn about commands, see [[https://golang.org/cmd/][Commands]]
+
+To learn about editor/IDE-specific support, check out the [[https://github.com/golang/go/wiki/IDEsAndTextEditorPlugins][Wiki]]
+
+To use Go in/with Docker (and when not to):
+
+- [[https://medium.com/statuscode/golang-docker-for-development-and-production-ce3ad4e69673][post]] on Medium
+- [[https://www.oreilly.com/ideas/should-you-containerize-your-go-code][article]] on O'Reilly Radar
+
+* Useful packages and tools
+
+to read/write YAML files:
+.link http://gopkg.in/yaml.v2 gopkg.in/yaml.v2
+
+to build proper CLI apps:
+.link https://github.com/spf13/cobra spf13/cobra
+
+to manage configurations:
+.link https://github.com/spf13/viper spf13/viper
+
+for structured logging:
+.link https://github.com/Sirupsen/logrus Sirupsen/logrus
+
+for cross-platform filesystem notifications:
+.link https://github.com/fsnotify/fsnotify fsnotify/fsnotify
+
+* Useful packages and tools
+
+to do advanced terminal output:
+.link https://github.com/buger/goterm buger/goterm
+
+to manage tabular output in terminal:
+.link https://github.com/olekukonko/tablewriter olekukonko/tablewriter
+
+to manage S3 (compatible) storage systems:
+.link https://github.com/minio/minio-go minio/minio-go
+
+to access the GitHub API:
+.link https://github.com/google/go-github google/go-github
+
+More via [[https://github.com/avelino/awesome-go][awesome-go]] …
+
+* Case studies
+
+- [[https://github.com/mhausenblas/burry.sh][burry.sh]]
+- [[https://github.com/containerd/containerd][containerd]]
+- [[https://github.com/coreos/etcd][etcd]]
+- [[https://github.com/hashicorp/consul][Consul]]
+- [[https://github.com/kubernetes/kubernetes][Kubernetes]]
+
+* Best practices & criticism
+
+- [[https://golang.org/doc/effective_go.html][Effective Go]]
+- [[https://www.youtube.com/watch?v=PAAkCSZUG1c][Go Proverbs]]
+- [[http://peter.bourgon.org/go-best-practices-2016/][Go best practices, six years in]]
+- [[https://www.youtube.com/watch?v=29LLRKIL_TI][7 common mistakes in Go and when to avoid them]]
+- [[https://github.com/ksimka/go-is-not-good][ksimka/go-is-not-good]]
+- [[https://www.youtube.com/watch?v=gHCtEjzZ-rY][A Look at the Criticism of Go]]
+
+* Books
+
+.image img/tgpl.jpg 500 _
+
+.link https://www.amazon.com/Programming-Language-Addison-Wesley-Professional-Computing/dp/0134190440 Get it here …
+
+* Books
+
+.image img/gia.jpg 500 _
+
+.link https://www.manning.com/books/go-in-action Get it here …
+
+
+* Kudos
+
+I'd like to thank [[http://peter.bourgon.org/][Peter Bourgon]] for giving me permission to
+re-use parts of his talk on [[https://speakerdeck.com/peterbourgon/go-plus-microservices-equals-go-kit][Go + microservices = Go kit]].
+
+Further, kudos go out to these wonderful Gophers who keep inspiring and motivating me:
+
+- [[https://twitter.com/bketelsen][Brian Ketelsen]]
+- [[https://twitter.com/jessfraz][Jessie Frazelle]]
+- [[https://twitter.com/davecheney][Dave Cheney]]
+- [[https://twitter.com/francesc][Francesc Campoy]]

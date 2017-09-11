@@ -1,2 +1,1 @@
-# go4systasks
-Using the Go programming language for system tasks
+# Let’s Go! Using the Go programming language for system tasks

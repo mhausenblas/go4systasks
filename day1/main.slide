@@ -90,6 +90,10 @@ For libraries:
 
   $ go build
 
+Go doc:
+
+  $ godoc -http=":6060"
+  $ go doc os.TempDir
 
 * Language features
 
@@ -135,9 +139,6 @@ Some more setup-related pointers:
 - [[https://golang.org/cmd/][Commands]]
 - [[https://github.com/golang/go/wiki/IDEsAndTextEditorPlugins][Editor/IDE-specific support]]
 
-
-
-
 * Hello World!
 
 .code -numbers code/hello-world/main.go
@@ -163,75 +164,90 @@ Do the following:
 
 *Check*: compare the output with and without the environment variable `G4S_LANG` set and explain what happened.
 
+Note:
+
+- env variables, see also package [[https://golang.org/pkg/os/][os]]
+- `init()` function, read [[https://medium.com/golangspec/init-functions-in-go-eac191b3860a][here]] for more
+- Unicode (UTF-8) natively, read [[https://blog.golang.org/strings][Strings, bytes, runes and characters in Go]] for more
+
 * Slices
 
-.play -numbers code/s02/main.go
+.code -numbers code/slices/main.go
 
 * Maps
 
-.play -numbers code/s03/main.go
+.code -numbers code/maps/main.go
 
-* Structs
+* Structs (1/2)
 
-.code -numbers code/s04/main.go /BEGINS/,/ENDS/
+.code -numbers code/structs/main.go /BEGINS/,/ENDS/
 
-* Structs
+* Structs (2/2)
 
-.play -numbers code/s04/main.go /BEGINC/,/ENDC/
+.code -numbers code/structs/main.go /BEGINC/,/ENDC/
 
 * Functions
 
-.code -numbers code/s05/main.go /BEGIND/,/ENDD/
-.play -numbers code/s05/main.go /BEGINC/,/ENDC/
+.code -numbers code/functions/main.go /BEGIND/,/ENDD/
+.code -numbers code/functions/main.go /BEGINC/,/ENDC/
+
+Note: the full code is available at [[code/functions/main.go][code/functions/main.go]]
 
 * Methods
 
-.code -numbers code/s06/main.go /BEGIND/,/ENDD/
-.play -numbers code/s06/main.go /BEGINC/,/ENDC/
+.code -numbers code/methods/main.go /BEGIND/,/ENDD/
+.code -numbers code/methods/main.go /BEGINC/,/ENDC/
+
+Note: the full code is available at [[code/methods/main.go][code/methods/main.go]]
 
 * Errors
 
-.code -numbers code/s07/main.go /BEGIND/,/ENDD/
-.play -numbers code/s07/main.go /BEGINC/,/ENDC/
+.code -numbers code/errors/main.go /BEGIND/,/ENDD/
+.code -numbers code/errors/main.go /BEGINC/,/ENDC/
+
+Note: the full code is available at [[code/errors/main.go][code/errors/main.go]]
 
 * Interfaces
 
-.play -numbers code/s08/main.go /BEGIN/,/END/
+.code -numbers code/interfaces/main.go /BEGIN/,/END/
 
-* Files - Reading*
+Note: the full code is available at [[code/interfaces/main.go][code/interfaces/main.go]]
 
-.play -numbers code/s09/main.go
+* Files - Reading
 
-.link https://gobyexample.com/reading-files More …
+.code -numbers code/files-reading/main.go
 
-* Files - Writing*
+Note: the full code is available at [[code/files-reading/main.go][code/files-reading/main.go]]
 
-.play -numbers code/s10/main.go /BEGIN/,/END/
+* Files - Writing
 
-.link https://gobyexample.com/writing-files More …
+.code -numbers code/files-writing/main.go /BEGIN/,/END/
 
-* Files - Advanced*
-
-.code -numbers code/s11/main.go /BEGIND/,/ENDD/
-.play -numbers code/s11/main.go /BEGINC/,/ENDC/
-
+Note: the full code is available at [[code/files-writing/main.go][code/files-writing/main.go]]
 
 * Advanced Go programming
 
-* Simple service with a HTTP API*
+* Files - Advanced
 
-.code -numbers code/s12/main.go
+.code -numbers code/files-advanced/main.go /BEGIND/,/ENDD/
+.code -numbers code/files-advanced/main.go /BEGINC/,/ENDC/
 
-* Simple service with a HTTP API*
+Note: the full code is available at [[code/files-advanced/main.go][code/files-advanced/main.go]]
+
+* A service with an HTTP API
+
+.code -numbers code/http-service/main.go
+
+* A service with an HTTP API
 
 In one terminal:
 
-  $ go run code/s12/main.go
+  $ go run code/http-service/main.go
 
 And in another session:
 
   $ curl localhost:9876/data
-  {"title":"The Let's Go workshop","count":33}
+  {"title":"Let’s Go! Using the Go programming language for system tasks","count":22}
 
 * Others
 

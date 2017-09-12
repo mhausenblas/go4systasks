@@ -7,7 +7,7 @@ import (
 )
 
 func main() {
-	dat, err := ioutil.ReadFile("data/simple.txt")
+	dat, err := ioutil.ReadFile("../../data/simple.txt")
 	if err != nil {
 		fmt.Println(err)
 		os.Exit(1)

@@ -29,12 +29,13 @@ func main() {
 
 	// BEGINC OMIT
 	p := Project{}
-	raw, err := ioutil.ReadFile("data/project.json")
+	raw, err := ioutil.ReadFile("../../data/project.json")
 	if err != nil {
 		fmt.Println(err)
 		os.Exit(1)
 	}
 	_ = json.Unmarshal(raw, &p)
-	fmt.Printf("%v", p)
 	// ENDC OMIT
+	fmt.Printf("%v\n", p)
+	fmt.Printf("%+v\n", p)
 }

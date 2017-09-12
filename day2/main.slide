@@ -9,3 +9,65 @@ http://mhausenblas.info
 @mhausenblas
 
 * Agenda
+
+- Useful packages
+- Case studies and patterns
+
+* Useful packages and tools
+
+to read/write YAML files:
+.link http://gopkg.in/yaml.v2 gopkg.in/yaml.v2
+
+to build proper CLI apps:
+.link https://github.com/spf13/cobra spf13/cobra
+
+to manage configurations:
+.link https://github.com/spf13/viper spf13/viper
+
+for structured logging:
+.link https://github.com/Sirupsen/logrus Sirupsen/logrus
+
+for cross-platform filesystem notifications:
+.link https://github.com/fsnotify/fsnotify fsnotify/fsnotify
+
+* Useful packages and tools
+
+to do advanced terminal output:
+.link https://github.com/buger/goterm buger/goterm
+
+to manage tabular output in terminal:
+.link https://github.com/olekukonko/tablewriter olekukonko/tablewriter
+
+to manage S3 (compatible) storage systems:
+.link https://github.com/minio/minio-go minio/minio-go
+
+to access the GitHub API:
+.link https://github.com/google/go-github google/go-github
+
+More via [[https://github.com/avelino/awesome-go][awesome-go]] …
+
+* Case studies and patterns
+
+- batch renaming files/directories: [[https://github.com/shenwei356/brename][shenwei356/brename]]
+- inspect Linux namespaces and cgroups: [[https://github.com/mhausenblas/cinf][mhausenblas/cinf]]
+- back up and restore Kubernetes clusters: [[https://github.com/mhausenblas/reshifter][mhausenblas/reshifter]]
+- container resource consumption management in Kubernetes: [[https://github.com/openshift-demos/resorcerer][openshift-demos/resorcerer]]
+- library for implementing RBAC: [[ory/ladon][https://github.com/ory/ladon]]
+
+Others, not covered in this training, for self-study:
+
+- [[https://github.com/coreos/etcd][etcd]]
+- [[https://github.com/hashicorp/consul][Consul]]
+- [[https://github.com/kubernetes/kubernetes][Kubernetes]]
+
+* Books
+
+.image img/tgpl.jpg 500 _
+
+.link https://www.amazon.com/Programming-Language-Addison-Wesley-Professional-Computing/dp/0134190440 Get it here …
+
+* Books
+
+.image img/gia.jpg 500 _
+
+.link https://www.manning.com/books/go-in-action Get it here …

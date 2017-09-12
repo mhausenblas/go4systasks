@@ -11,26 +11,17 @@ http://mhausenblas.info
 * Agenda
 
 - Why Go?
-- Walkthrough
-- Advanced stuff
-- Gophers exchange
-- DIY
-
-* Why Go?
-
-
-* Why Go?
-
-.background img/gopher_head.png
-
-- History
-- Language features
-- Community
 - Tooling
+- Language features by example
+- Advanced Go programming
+- Good practices (idiomatic Go, limitations)
+- Go and containers
+
+* Why Go?
 
 * History
 
-.code snippets/design_notes
+.code img/design_notes
 
 [[https://talks.golang.org/2015/gophercon-goevolution.slide][More …]]
 
@@ -38,20 +29,9 @@ http://mhausenblas.info
 
 .image img/influences.png 500 _
 
-* Language features
-
-* Language features
-
-- Statically typed, compiled
-- Native binaries (Linux, macOS, Windows)
-- Garbage collected
-- Comprehensive [[https://golang.org/pkg/][standard lib]]
-- Concurrency a 1st-class citizen
-- No magic
-
 * Community
 
-* Discussions
+* Community: discussions
 
 .background img/community.png
 
@@ -62,7 +42,7 @@ When you need help, want to ask or discuss something …
 .link https://www.reddit.com/r/golang/ /r/golang on Reddit
 .link http://stackoverflow.com/questions/tagged/go #go on StackOverflow
 
-* News
+* Community: news
 
 .background img/community.png
 
@@ -110,89 +90,143 @@ For libraries:
 
   $ go build
 
-* Walkthrough
 
-* Follow along
+* Language features
 
-Online: no set up required but limited
+* Language features
 
-Local:
+- Statically typed, compiled
+- Native binaries (Linux, macOS, Windows)
+- Garbage collected
+- Comprehensive [[https://golang.org/pkg/][standard lib]]
+- Concurrency a 1st-class citizen
+- No magic
 
-  $ git clone https://github.com/mhausenblas/letsgo && cd letsgo
-  $ go run snippets/sXX/main.go
+Next: Language features by example, hands-on
 
-_Note_: examples that may only work in local mode are marked with *
+* Setup
+
+1. Install Go on your machine
+
+Visit [[https://golang.org/doc/install][golang.org/doc/install]] and choose your platform-dependent install procedure.
+
+2. Set up work environment
+
+For example, if you choose as your work environment `/Users/someuser/work`, then add the following to `.bashrc`:
+
+  export GOPATH=/Users/someuser/work
+  PATH=$PATH:$GOPATH/bin
+
+Note: `$GOPATH` is your base directory, all packages/binaries will be installed here.
+
+* Setup
+
+3. Get the code for the hands-on sessions
+
+  $ cd $GOPATH
+  $ mkdir -p src/github.com/mhausenblas/ && cd "$_"
+  $ git clone https://github.com/mhausenblas/go4systasks/ && cd go4systasks
+
+Going forward we call the directory you cloned the repo into `$G4SHOME`, in my case: `/Users/mhausenblas/Dropbox/dev/work/src/github.com/mhausenblas/go4systasks`
+
+Some more setup-related pointers:
+
+- [[https://golang.org/doc/code.html][How to Write Go Code]]
+- [[https://golang.org/cmd/][Commands]]
+- [[https://github.com/golang/go/wiki/IDEsAndTextEditorPlugins][Editor/IDE-specific support]]
+
+
+
 
 * Hello World!
 
-.play -numbers snippets/s00/main.go
+.code -numbers code/hello-world/main.go
 
-* A more realistic Hello World!*
+To run this, do the following:
 
-.play -numbers snippets/s01/main.go
+  $ cd $G4SHOME/day1/code/hello-world/
+  $ go run main.go
+
+*Check*: what just happened? Consult `go run -h` to learn more.
+
+* A more realistic Hello World!
+
+.code -numbers code/hello-world-for-real/main.go
+
+* A more realistic Hello World!
+
+Do the following:
+
+  $ cd $G4SHOME/day1/code/hello-world-for-real/
+  $ go run main.go
+  $ G4S_LANG=de go run main.go
+
+*Check*: compare the output with and without the environment variable `G4S_LANG` set and explain what happened.
 
 * Slices
 
-.play -numbers snippets/s02/main.go
+.play -numbers code/s02/main.go
 
 * Maps
 
-.play -numbers snippets/s03/main.go
+.play -numbers code/s03/main.go
 
 * Structs
 
-.code -numbers snippets/s04/main.go /BEGINS/,/ENDS/
+.code -numbers code/s04/main.go /BEGINS/,/ENDS/
 
 * Structs
 
-.play -numbers snippets/s04/main.go /BEGINC/,/ENDC/
+.play -numbers code/s04/main.go /BEGINC/,/ENDC/
 
 * Functions
 
-.code -numbers snippets/s05/main.go /BEGIND/,/ENDD/
-.play -numbers snippets/s05/main.go /BEGINC/,/ENDC/
+.code -numbers code/s05/main.go /BEGIND/,/ENDD/
+.play -numbers code/s05/main.go /BEGINC/,/ENDC/
 
 * Methods
 
-.code -numbers snippets/s06/main.go /BEGIND/,/ENDD/
-.play -numbers snippets/s06/main.go /BEGINC/,/ENDC/
+.code -numbers code/s06/main.go /BEGIND/,/ENDD/
+.play -numbers code/s06/main.go /BEGINC/,/ENDC/
 
 * Errors
 
-.code -numbers snippets/s07/main.go /BEGIND/,/ENDD/
-.play -numbers snippets/s07/main.go /BEGINC/,/ENDC/
+.code -numbers code/s07/main.go /BEGIND/,/ENDD/
+.play -numbers code/s07/main.go /BEGINC/,/ENDC/
 
 * Interfaces
 
-.play -numbers snippets/s08/main.go /BEGIN/,/END/
+.play -numbers code/s08/main.go /BEGIN/,/END/
 
 * Files - Reading*
 
-.play -numbers snippets/s09/main.go
+.play -numbers code/s09/main.go
 
 .link https://gobyexample.com/reading-files More …
 
 * Files - Writing*
 
-.play -numbers snippets/s10/main.go /BEGIN/,/END/
+.play -numbers code/s10/main.go /BEGIN/,/END/
 
 .link https://gobyexample.com/writing-files More …
 
 * Files - Advanced*
 
-.code -numbers snippets/s11/main.go /BEGIND/,/ENDD/
-.play -numbers snippets/s11/main.go /BEGINC/,/ENDC/
+.code -numbers code/s11/main.go /BEGIND/,/ENDD/
+.play -numbers code/s11/main.go /BEGINC/,/ENDC/
 
+
+* Advanced Go programming
 
 * Simple service with a HTTP API*
 
-.code -numbers snippets/s12/main.go
+.code -numbers code/s12/main.go
 
 * Simple service with a HTTP API*
 
 In one terminal:
 
-  $ go run snippets/s12/main.go
+  $ go run code/s12/main.go
 
 And in another session:
 
@@ -205,63 +239,9 @@ And in another session:
 - [[https://gobyexample.com/time-formatting-parsing][Time Formatting/Parsing]]
 - [[https://github.com/golang/go/wiki/TableDrivenTests][Testing]]
 
-* Advanced stuff
+* Good practices
 
-* Development
-
-Starting point: [[https://golang.org/doc/code.html][How to Write Go Code]]
-
-To learn about commands, see [[https://golang.org/cmd/][Commands]]
-
-To learn about editor/IDE-specific support, check out the [[https://github.com/golang/go/wiki/IDEsAndTextEditorPlugins][Wiki]]
-
-To use Go in/with Docker (and when not to):
-
-- [[https://medium.com/statuscode/golang-docker-for-development-and-production-ce3ad4e69673][post]] on Medium
-- [[https://www.oreilly.com/ideas/should-you-containerize-your-go-code][article]] on O'Reilly Radar
-
-* Useful packages and tools
-
-to read/write YAML files:
-.link http://gopkg.in/yaml.v2 gopkg.in/yaml.v2
-
-to build proper CLI apps:
-.link https://github.com/spf13/cobra spf13/cobra
-
-to manage configurations:
-.link https://github.com/spf13/viper spf13/viper
-
-for structured logging:
-.link https://github.com/Sirupsen/logrus Sirupsen/logrus
-
-for cross-platform filesystem notifications:
-.link https://github.com/fsnotify/fsnotify fsnotify/fsnotify
-
-* Useful packages and tools
-
-to do advanced terminal output:
-.link https://github.com/buger/goterm buger/goterm
-
-to manage tabular output in terminal:
-.link https://github.com/olekukonko/tablewriter olekukonko/tablewriter
-
-to manage S3 (compatible) storage systems:
-.link https://github.com/minio/minio-go minio/minio-go
-
-to access the GitHub API:
-.link https://github.com/google/go-github google/go-github
-
-More via [[https://github.com/avelino/awesome-go][awesome-go]] …
-
-* Case studies
-
-- [[https://github.com/mhausenblas/burry.sh][burry.sh]]
-- [[https://github.com/containerd/containerd][containerd]]
-- [[https://github.com/coreos/etcd][etcd]]
-- [[https://github.com/hashicorp/consul][Consul]]
-- [[https://github.com/kubernetes/kubernetes][Kubernetes]]
-
-* Best practices & criticism
+* Idiomatic Go
 
 - [[https://golang.org/doc/effective_go.html][Effective Go]]
 - [[https://www.youtube.com/watch?v=PAAkCSZUG1c][Go Proverbs]]
@@ -270,27 +250,9 @@ More via [[https://github.com/avelino/awesome-go][awesome-go]] …
 - [[https://github.com/ksimka/go-is-not-good][ksimka/go-is-not-good]]
 - [[https://www.youtube.com/watch?v=gHCtEjzZ-rY][A Look at the Criticism of Go]]
 
-* Books
+* Go and containers
 
-.image img/tgpl.jpg 500 _
+To use Go in/with Docker (and when not to):
 
-.link https://www.amazon.com/Programming-Language-Addison-Wesley-Professional-Computing/dp/0134190440 Get it here …
-
-* Books
-
-.image img/gia.jpg 500 _
-
-.link https://www.manning.com/books/go-in-action Get it here …
-
-
-* Kudos
-
-I'd like to thank [[http://peter.bourgon.org/][Peter Bourgon]] for giving me permission to
-re-use parts of his talk on [[https://speakerdeck.com/peterbourgon/go-plus-microservices-equals-go-kit][Go + microservices = Go kit]].
-
-Further, kudos go out to these wonderful Gophers who keep inspiring and motivating me:
-
-- [[https://twitter.com/bketelsen][Brian Ketelsen]]
-- [[https://twitter.com/jessfraz][Jessie Frazelle]]
-- [[https://twitter.com/davecheney][Dave Cheney]]
-- [[https://twitter.com/francesc][Francesc Campoy]]
+- [[https://medium.com/statuscode/golang-docker-for-development-and-production-ce3ad4e69673][post]] on Medium
+- [[https://www.oreilly.com/ideas/should-you-containerize-your-go-code][article]] on O'Reilly Radar

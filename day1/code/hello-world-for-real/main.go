@@ -8,7 +8,7 @@ import (
 var greeting string
 
 func init() {
-	glang := os.Getenv("LG_LANG")
+	glang := os.Getenv("G4S_LANG")
 	switch glang {
 	case "de":
 		greeting = "Hallo und willkommen!"

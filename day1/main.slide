@@ -138,6 +138,7 @@ Some more setup-related pointers:
 - [[https://golang.org/doc/code.html][How to Write Go Code]]
 - [[https://golang.org/cmd/][Commands]]
 - [[https://github.com/golang/go/wiki/IDEsAndTextEditorPlugins][Editor/IDE-specific support]]
+- Zero setup with the [[https://play.golang.org][Go Playground]]
 
 * Hello World!
 
@@ -227,12 +228,22 @@ Note: the full code is available at [[code/files-writing/main.go][code/files-wri
 
 * Advanced Go programming
 
-* Files - Advanced
+* Files - Advanced/JSON
 
 .code -numbers code/files-advanced/main.go /BEGIND/,/ENDD/
 .code -numbers code/files-advanced/main.go /BEGINC/,/ENDC/
 
 Note: the full code is available at [[code/files-advanced/main.go][code/files-advanced/main.go]]
+
+* Time
+
+.code -numbers code/time/main.go /BEGIND/,/ENDD/
+
+See also [[https://golang.org/pkg/time/#pkg-constants][Time Format]]
+
+* Concurrency
+
+See also [[https://tour.golang.org/concurrency/1][Concurrency]]
 
 * A service with an HTTP API
 
@@ -249,11 +260,14 @@ And in another session:
   $ curl localhost:9876/data
   {"title":"Let’s Go! Using the Go programming language for system tasks","count":22}
 
-* Others
+* Testing
 
-- [[https://tour.golang.org/concurrency/1][Concurrency]]
-- [[https://gobyexample.com/time-formatting-parsing][Time Formatting/Parsing]]
-- [[https://github.com/golang/go/wiki/TableDrivenTests][Testing]]
+See also [[https://github.com/golang/go/wiki/TableDrivenTests][table driven tests]]
+
+* Dependency management
+
+Slide for vendoring with Go `dep` and example.
+
 
 * Good practices
 

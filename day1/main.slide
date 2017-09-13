@@ -14,8 +14,7 @@ http://mhausenblas.info
 - Tooling
 - Language features by example
 - Advanced Go programming
-- Good practices (idiomatic Go, limitations)
-- Go and containers
+- Good practices (idiomatic Go, containers)
 
 * Why Go?
 
@@ -232,6 +231,27 @@ Note: the full code is available at [[code/files-reading/main.go][code/files-rea
 
 Note: the full code is available at [[code/files-writing/main.go][code/files-writing/main.go]]
 
+* Testing (1/2)
+
+In [[code/testing/main.go][code/testing/main.go]]:
+.code -numbers code/testing/main.go  /BEGIN/,/END/
+
+In [[code/testing/main_test.go][code/testing/main_test.go]]:
+.code -numbers code/testing/main_test.go  /BEGIN/,/END/
+
+* Testing (2/2)
+
+Try out the following:
+
+  $ cd $G4SHOME/day1/code/testing/
+  $ go test -v
+
+See also:
+
+- [[https://github.com/golang/go/wiki/TableDrivenTests][Table driven tests]]
+- [[https://blog.golang.org/examples][Testable Examples in Go]]
+- [[https://dave.cheney.net/2013/06/30/how-to-write-benchmarks-in-go][Benchmarks]]
+
 * Advanced Go programming
 
 * Files - Advanced/JSON
@@ -298,13 +318,11 @@ For a more realistic setup use:
 - [[https://github.com/spf13/cobra][spf13/cobra]] (CLI interactions)
 - [[hhttps://github.com/spf13/viper][spf13/viper]] (config)
 
-* Testing
-
-See also [[https://github.com/golang/go/wiki/TableDrivenTests][table driven tests]]
-
 * Dependency management
 
 Slide for vendoring with Go `dep` and example.
+
+
 
 
 
@@ -325,3 +343,15 @@ To use Go in/with Docker (and when not to):
 
 - [[https://medium.com/statuscode/golang-docker-for-development-and-production-ce3ad4e69673][post]] on Medium
 - [[https://www.oreilly.com/ideas/should-you-containerize-your-go-code][article]] on O'Reilly Radar
+
+* Miscellaneous
+
+Make files:
+
+- test/build/ship
+
+Options for embedding binary content:
+
+- using libraries such as [[https://github.com/jteeuwen/go-bindata][go-bindata]]
+- using `go` `generate` (see for example this [[https://blog.golang.org/generate][blog post]])
+- ship with/in container image

@@ -175,9 +175,13 @@ Note:
 
 .code -numbers code/slices/main.go
 
+Note: the full code is available at [[code/slices/main.go][code/slices/main.go]]
+
 * Maps
 
 .code -numbers code/maps/main.go
+
+Note: the full code is available at [[code/maps/main.go][code/maps/main.go]]
 
 * Structs (1/2)
 
@@ -186,6 +190,8 @@ Note:
 * Structs (2/2)
 
 .code -numbers code/structs/main.go /BEGINC/,/ENDC/
+
+Note: the full code is available at [[code/structs/main.go][code/structs/main.go]]
 
 * Functions
 
@@ -251,30 +257,46 @@ Note: the full code is available at [[code/concurrency/main.go][code/concurrency
 
 See also the [[https://tour.golang.org/concurrency/1][concurrency]] section of the official Go lang tour.
 
-* A service with an HTTP API
+* A service with an HTTP API (1/2)
 
 .code -numbers code/http-service/main.go
 
-* A service with an HTTP API
+* A service with an HTTP API (2/2)
 
 In one terminal session do:
 
-  $ go run code/http-service/main.go
+  $ cd $G4SHOME/day1/code/http-service/
+  $ go run main.go
 
-… and in another session:
+… and in another session, from any directory:
 
-  $ curl localhost:9876/data
+  $ curl http://127.0.0.1:9876/data
   {"title":"Let’s Go! Using the Go programming language for system tasks","count":22}
 
 Note: the full code is available at [[code/http-service/main.go][code/http-service/main.go]]
 
-* A prod-ready HTTP service
+For a more realistic setup use a HTTP request multiplexer such as [[http://www.gorillatoolkit.org/pkg/mux][gorilla/mux]].
 
-Using https://github.com/gorilla/mux
+* CLI interaction and config (1/2)
 
-* CLI interaction and config
+.code -numbers code/cli/main.go  /BEGIN/,/END/
 
-Using https://github.com/spf13/cobra
+Note: the full code is available at [[code/cli/main.go][code/cli/main.go]]
+
+* CLI interaction and config (2/2)
+
+Try out the following:
+
+  $ cd $G4SHOME/day1/code/cli/
+  $ go run main.go
+  $ go run main.go -h
+  $ go run main.go --target=Dan
+  $ go run main.go --target=Dan --repeat=2
+
+For a more realistic setup use:
+
+- [[https://github.com/spf13/cobra][spf13/cobra]] (CLI interactions)
+- [[hhttps://github.com/spf13/viper][spf13/viper]] (config)
 
 * Testing
 

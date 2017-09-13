@@ -245,7 +245,11 @@ See also package [[https://golang.org/pkg/time/#pkg-constants][time]] for backgr
 
 * Concurrency
 
-See also [[https://tour.golang.org/concurrency/1][Concurrency]]
+.code -numbers code/concurrency/main.go  /BEGIN/,/END/
+
+Note: the full code is available at [[code/concurrency/main.go][code/concurrency/main.go]]
+
+See also the [[https://tour.golang.org/concurrency/1][concurrency]] section of the official Go lang tour.
 
 * A service with an HTTP API
 
@@ -253,14 +257,24 @@ See also [[https://tour.golang.org/concurrency/1][Concurrency]]
 
 * A service with an HTTP API
 
-In one terminal:
+In one terminal session do:
 
   $ go run code/http-service/main.go
 
-And in another session:
+… and in another session:
 
   $ curl localhost:9876/data
   {"title":"Let’s Go! Using the Go programming language for system tasks","count":22}
+
+Note: the full code is available at [[code/http-service/main.go][code/http-service/main.go]]
+
+* A prod-ready HTTP service
+
+Using https://github.com/gorilla/mux
+
+* CLI interaction and config
+
+Using https://github.com/spf13/cobra
 
 * Testing
 
@@ -269,6 +283,7 @@ See also [[https://github.com/golang/go/wiki/TableDrivenTests][table driven test
 * Dependency management
 
 Slide for vendoring with Go `dep` and example.
+
 
 
 * Good practices

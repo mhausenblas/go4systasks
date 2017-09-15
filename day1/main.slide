@@ -318,13 +318,24 @@ For a more realistic setup use:
 - [[https://github.com/spf13/cobra][spf13/cobra]] (CLI interactions)
 - [[hhttps://github.com/spf13/viper][spf13/viper]] (config)
 
-* Dependency management
+* Dependency management (1/2)
 
-Slide for vendoring with Go `dep` and example.
+Use Go [[https://github.com/golang/dep][dep]] to manage dependencies. First, install it like so:
 
+  $ go get -u github.com/golang/dep/cmd/dep
 
+Now do the following to create the dependencies:
 
+  $ cd $G4SHOME/day1/code/dependency/
+  $ dep ensure
 
+As a result of above command you should now see a 'vendor/' sub-directory in `$G4SHOME/day1/code/dependency/` and you're ready to execute it.
+
+* Dependency management (2/2)
+
+.code -numbers code/dependency/main.go
+
+Note: the full code is available at [[code/dependency/main.go][code/dependency/main.go]]
 
 * Good practices
 
@@ -343,6 +354,9 @@ To use Go in/with Docker (and when not to):
 
 - [[https://medium.com/statuscode/golang-docker-for-development-and-production-ce3ad4e69673][post]] on Medium
 - [[https://www.oreilly.com/ideas/should-you-containerize-your-go-code][article]] on O'Reilly Radar
+
+EXAMPLE
+
 
 * Miscellaneous
 

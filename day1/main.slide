@@ -243,16 +243,39 @@ Note: the full code is available at [[code/modules/something/part.go][code/modul
 
 * Packages and visibility (3/3)
 
+Try out the following:
+
+- alias the `something` package with:
+ import (
+  so "github.com/mhausenblas/go4systasks/day1/code/modules/something"
+ )
+- try to access `something.internalfunc()` from `main.go`
+
 See also:
 
 - Effective Go: [[https://golang.org/doc/effective_go.html#names][Package names]]
 - [[https://blog.learngoprogramming.com/definitive-guide-to-go-packages-focus-on-the-fundamentals-to-empower-your-skills-d14aae7cd321][Understanding Go Packages]]
+
+* Interactive user input
+
+.code -numbers code/userin/main.go /BEGIN/,/END/
+
+Note: the full code is available at [[code/userin/main.go][code/userin/main.go]]
+
+See also [[https://tutorialedge.net/golang/reading-console-input-golang/][Reading in Console Input in Golang]].
 
 * Files - Reading
 
 .code -numbers code/files-reading/main.go
 
 Note: the full code is available at [[code/files-reading/main.go][code/files-reading/main.go]]
+
+* Shelling out
+
+.code -numbers code/shell-out/main.go
+
+Note: the full code is available at [[code/shell-out/main.go][code/shell-out/main.go]]
+
 
 * Files - Writing
 
@@ -304,7 +327,7 @@ See also package [[https://golang.org/pkg/time/#pkg-constants][time]] for backgr
 
 Note: the full code is available at [[code/concurrency/main.go][code/concurrency/main.go]]
 
-See also the [[https://tour.golang.org/concurrency/1][concurrency]] section of the official Go lang tour.
+See also the [[https://tour.golang.org/concurrency/1][concurrency]] section of the official Go lang tour and the [[http://www.golangprograms.com/go-language/channels.html][Working with Channels]] article.
 
 * A service with an HTTP API (1/2)
 

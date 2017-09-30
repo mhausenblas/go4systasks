@@ -10,10 +10,63 @@ http://mhausenblas.info
 
 * Agenda
 
-- Useful packages
+- A standard layout
+- Useful packages and tools
 - Case studies and patterns
+- Books
+
+* A standard layout
+
+* A standard layout (1/2)
+
+Library:
+
+  pkg
+  ├── io
+  │   ├── doc.go
+  │   ├── types.go
+  │   └── onething.go
+  └── service
+      ├── constants.go
+      ├── doc.go
+      ├── part.go
+      └── types.go
+
+CLI app:
+
+   cli
+   ├── cmd
+   │   ├── doc.go
+   │   ├── launch.go
+   │   ├── root.go
+   │   └── version.go
+   └── main.go
+
+* A standard layout (2/2)
+
+`Makefile` for example:
+
+  version := 0.1.0
+
+  .PHONY: gbuild gtest cbuild cpush
+
+  release : gbuild gtest cbuild cpush
+
+  gbuild:
+    GOOS=linux GOARCH=amd64 go build -ldflags "-X main.releaseVersion=$(version)" -o ./myapp
+
+  gtest :
+    go test -short -run Test* ./pkg
+
+  cbuild :
+    docker build --build-arg rversion=$(rversion) -t quay.io/mhausenblas/myapp:$(version) .
+
+  cpush :
+    docker push quay.io/mhausenblas/myapp:$(version)
 
 * Useful packages and tools
+
+* Useful packages and tools (1/2)
 
 to read/write YAML files:
 .link http://gopkg.in/yaml.v2 gopkg.in/yaml.v2
@@ -30,7 +83,7 @@ for structured logging:
 for cross-platform filesystem notifications:
 .link https://github.com/fsnotify/fsnotify fsnotify/fsnotify
 
-* Useful packages and tools
+* Useful packages and tools (2/2)
 
 to do advanced terminal output:
 .link https://github.com/buger/goterm buger/goterm
@@ -48,17 +101,34 @@ More via [[https://github.com/avelino/awesome-go][awesome-go]] …
 
 * Case studies and patterns
 
+* Case studies and patterns (1/2)
+
 - batch renaming files/directories: [[https://github.com/shenwei356/brename][shenwei356/brename]]
+- URL shortener using PostgreSQL: [[https://github.com/douglasmakey/ursho][douglasmakey/ursho]]
 - inspect Linux namespaces and cgroups: [[https://github.com/mhausenblas/cinf][mhausenblas/cinf]]
 - back up and restore Kubernetes clusters: [[https://github.com/mhausenblas/reshifter][mhausenblas/reshifter]]
-- container resource consumption management in Kubernetes: [[https://github.com/openshift-demos/resorcerer][openshift-demos/resorcerer]]
-- library for implementing RBAC: [[ory/ladon][https://github.com/ory/ladon]]
+- container resource consumption management: [[https://github.com/openshift-demos/resorcerer][openshift-demos/resorcerer]]
+- library for implementing RBAC: [[https://github.com/ory/ladon][ory/ladon]]
+
+* Case studies and patterns (2/2)
 
 Others, not covered in this training, for self-study:
 
 - [[https://github.com/coreos/etcd][etcd]]
 - [[https://github.com/hashicorp/consul][Consul]]
 - [[https://github.com/kubernetes/kubernetes][Kubernetes]]
+
+* Implementing your own tool
+
+* Implementing your own tool
+
+- Reimplement one of the tools you’ve developed in another language (bash scripts, Python, Ruby,  etc.)
+- Write a tool you will need in the near future, from scratch
+- If you have no idea, I'll provide some suggestions
+
+You've got 3 hours to complete and then we review together the results.
+
+* Books
 
 * Books
 

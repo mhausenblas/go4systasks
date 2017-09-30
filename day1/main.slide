@@ -428,6 +428,8 @@ Approaches:
 - copy the resulting Go binary and potential artifacts such as images or style sheets
 - small footprint, contains only the necessary bits
 
+Let's have a look at concrete example in [[code/containers/][code/containers]] …
+
 * Go and containers (2/4)
 
 Example `Dockerfile` for *full-blown* approach:

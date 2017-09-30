@@ -412,23 +412,54 @@ Note: the full code is available at [[code/dependency/main.go][code/dependency/m
 - [[https://github.com/ksimka/go-is-not-good][ksimka/go-is-not-good]]
 - [[https://www.youtube.com/watch?v=gHCtEjzZ-rY][A Look at the Criticism of Go]]
 
-* Go and containers
+* Go and containers (1/4)
 
-To use Go in/with Docker (and when not to):
+Approaches:
+
+1. Full-blown
+
+- use Go environment as base image, such as `FROM` `golang:1.9`
+- has all the tooling included
+- large footprint and large security attack surface
+
+2. Light-weight
+
+- use any generic environment such as `busybox` or `ubuntu` or `centos` as base image
+- copy the resulting Go binary and potential artifacts such as images or style sheets
+- small footprint, contains only the necessary bits
+
+* Go and containers (2/4)
+
+Example `Dockerfile` for *full-blown* approach:
+
+  FROM golang:1.9
+  COPY ./myapp /go/src/github.com/mhausenblas/myapp
+  WORKDIR /go/src/github.com/mhausenblas/myapp
+  RUN go get ./
+  RUN go build
+  ./myapp
+
+* Go and containers (3/4)
+
+Example `Dockerfile` for *light-weight* approach:
+
+  FROM centos:7
+  WORKDIR /app
+  COPY ui/* ui/
+  RUN chown -R 1001:1 /app
+  USER 1001
+  COPY myapp .
+  RUN chmod +x myapp
+  CMD ["/app/myapp"]
+
+* Go and containers (4/4)
+
+When to use and some tips, see:
 
 - [[https://medium.com/statuscode/golang-docker-for-development-and-production-ce3ad4e69673][post]] on Medium
 - [[https://www.oreilly.com/ideas/should-you-containerize-your-go-code][article]] on O'Reilly Radar
 
-EXAMPLE
-
-
-* Miscellaneous
-
-Make files:
-
-- test/build/ship
-
-Options for embedding binary content:
+* Embedding binary content
 
 - using libraries such as [[https://github.com/jteeuwen/go-bindata][go-bindata]]
 - using `go` `generate` (see for example this [[https://blog.golang.org/generate][blog post]])

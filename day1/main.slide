@@ -104,6 +104,11 @@ Check compliance with best practices:
 
 [[https://goreportcard.com][goreportcard.com]]
 
+Make sure to work through:
+
+[[https://github.com/campoy/go-tooling-workshop][Go Tooling in Action]]
+
+
 * Language features
 
 * Language features
@@ -270,12 +275,19 @@ See also [[https://tutorialedge.net/golang/reading-console-input-golang/][Readin
 
 Note: the full code is available at [[code/files-reading/main.go][code/files-reading/main.go]]
 
-* Shelling out
+* Shelling out (1/2)
 
 .code -numbers code/shell-out/main.go
 
 Note: the full code is available at [[code/shell-out/main.go][code/shell-out/main.go]]
 
+* Shelling out (2/2)
+
+See also:
+
+- `os.exec` package [[https://golang.org/pkg/os/exec/#pkg-examples][examples]]
+- [[http://www.darrencoxall.com/golang/executing-commands-in-go/][Executing Commands In Go]]
+- [[https://godoc.org/github.com/codeskyblue/go-sh][github.com/codeskyblue/go-sh]]
 
 * Files - Writing
 

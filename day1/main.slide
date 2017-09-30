@@ -54,7 +54,7 @@ When you want to learn about new developments, exchange thoughts and meet other 
 
 * Tooling
 
-* Tooling
+* Tooling (1/3)
 
 From build to test:
 
@@ -75,7 +75,7 @@ From build to test:
       version     print Go version
       vet         run go tool vet on packages
 
-* Tooling
+* Tooling (2/3)
 
 For simple, one-shot execution:
 
@@ -93,6 +93,16 @@ Go doc:
 
   $ godoc -http=":6060"
   $ go doc os.TempDir
+
+* Tooling (3/3)
+
+Publish and share your docs:
+
+[[https://godoc.org/][godoc.org]]
+
+Check compliance with best practices:
+
+[[https://goreportcard.com][goreportcard.com]]
 
 * Language features
 
@@ -218,6 +228,25 @@ Note: the full code is available at [[code/errors/main.go][code/errors/main.go]]
 .code -numbers code/interfaces/main.go /BEGIN/,/END/
 
 Note: the full code is available at [[code/interfaces/main.go][code/interfaces/main.go]]
+
+* Packages and visibility (1/3)
+
+.code -numbers code/modules/main.go
+
+Note: the full code is available at [[code/modules/main.go][code/modules/main.go]]
+
+* Packages and visibility (2/3)
+
+.code -numbers code/modules/something/part.go  /BEGIN/,/END/
+
+Note: the full code is available at [[code/modules/something/part.go][code/modules/something/part.go]]
+
+* Packages and visibility (3/3)
+
+See also:
+
+- Effective Go: [[https://golang.org/doc/effective_go.html#names][Package names]]
+- [[https://blog.learngoprogramming.com/definitive-guide-to-go-packages-focus-on-the-fundamentals-to-empower-your-skills-d14aae7cd321][Understanding Go Packages]]
 
 * Files - Reading
 

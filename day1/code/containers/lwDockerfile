@@ -1,0 +1,5 @@
+FROM centos:7
+WORKDIR /app
+COPY containers pingsvc
+EXPOSE 8888
+CMD ["/app/pingsvc"]

@@ -433,11 +433,18 @@ Approaches:
 Example `Dockerfile` for *full-blown* approach:
 
   FROM golang:1.9
-  COPY ./myapp /go/src/github.com/mhausenblas/myapp
+  COPY ./myapp /go/src/github.com/mhausenblas/myapp/
   WORKDIR /go/src/github.com/mhausenblas/myapp
   RUN go get ./
   RUN go build
   ./myapp
+
+If you've got Docker installed, you can try out:
+
+  $ docker build --tag=mhausenblas/pingsvc:1 --file=fbDockerfile .
+  $ docker run --rm --name fbping -d -p 8888:8888 mhausenblas/pingsvc:1
+  $ curl localhost:8888/ping
+  $ docker kill fbping
 
 * Go and containers (3/4)
 
@@ -452,7 +459,22 @@ Example `Dockerfile` for *light-weight* approach:
   RUN chmod +x myapp
   CMD ["/app/myapp"]
 
+If you've got Docker installed, you can try out:
+
+  $ GOOS=linux GOARCH=amd64 go build
+  $ docker build --tag=mhausenblas/pingsvc:2 --file=lwDockerfile .
+  $ docker run --rm --name lwping -d -p 8888:8888 mhausenblas/pingsvc:2
+  $ curl localhost:8888/ping
+  $ docker kill lwping
+
 * Go and containers (4/4)
+
+Compare resulting images:
+
+  $ docker images "mhausenblas/pingsvc*"
+  REPOSITORY            TAG                 IMAGE ID            CREATED             SIZE
+  mhausenblas/pingsvc   2                   221aede73f00        2 minutes ago       198 MB
+  mhausenblas/pingsvc   1                   74f9e2a7dcc8        10 minutes ago      741 MB
 
 When to use and some tips, see:
 

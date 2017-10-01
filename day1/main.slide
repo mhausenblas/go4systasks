@@ -283,6 +283,12 @@ See also [[https://tutorialedge.net/golang/reading-console-input-golang/][Readin
 
 Note: the full code is available at [[code/files-reading/main.go][code/files-reading/main.go]]
 
+* Files - Writing
+
+.code -numbers code/files-writing/main.go /BEGIN/,/END/
+
+Note: the full code is available at [[code/files-writing/main.go][code/files-writing/main.go]]
+
 * Shelling out (1/2)
 
 .code -numbers code/shell-out/main.go
@@ -296,12 +302,6 @@ See also:
 - `os.exec` package [[https://golang.org/pkg/os/exec/#pkg-examples][examples]]
 - [[http://www.darrencoxall.com/golang/executing-commands-in-go/][Executing Commands In Go]]
 - [[https://godoc.org/github.com/codeskyblue/go-sh][github.com/codeskyblue/go-sh]]
-
-* Files - Writing
-
-.code -numbers code/files-writing/main.go /BEGIN/,/END/
-
-Note: the full code is available at [[code/files-writing/main.go][code/files-writing/main.go]]
 
 * Testing (1/2)
 

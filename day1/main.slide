@@ -1,5 +1,5 @@
 Day 1: Let’s Go! Using the Go programming language for system tasks
-http://301.sh
+http://301.sh/go4sys
 09:00 1 Oct 2017
 Tags: Go, programming, tutorial
 
@@ -7,6 +7,14 @@ Michael Hausenblas
 Developer Advocate, Red Hat
 http://mhausenblas.info
 @mhausenblas
+
+* fmt.Sprintf("%v", mhausenblas)
+
+- Working on distributed systems in the past ~20 years, in containers space 4+ years
+- Web data and big data in applied research AT/IE and MapR
+- Container orchestrators (Mesosphere: Mesos/K8S, Red Hat: K8S)
+- Developer turned ops
+- C++, Java, Python, JavaScript/Node.js and since ~2014 a Gopher
 
 * Agenda
 

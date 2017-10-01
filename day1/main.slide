@@ -190,7 +190,7 @@ Do the following:
 Note:
 
 - env variables, see also package [[https://golang.org/pkg/os/][os]]
-- `init()` function, read [[https://medium.com/golangspec/init-functions-in-go-eac191b3860a][here]] for more
+- `init()` function, read [[https://medium.com/golangspec/init-functions-in-go-eac191b3860a][here]] for more (also: multiple `init()` functions)
 - Unicode (UTF-8) natively, read [[https://blog.golang.org/strings][Strings, bytes, runes and characters in Go]] for more
 
 * Slices

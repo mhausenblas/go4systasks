@@ -99,6 +99,13 @@ to access the GitHub API:
 
 More via [[https://github.com/avelino/awesome-go][awesome-go]] …
 
+* Exercise
+
+* Exercise
+
+  Write a program that watches the current directory and warns you
+  if more than 3 files have been created.
+
 * Case studies and patterns
 
 * Case studies and patterns (1/2)
@@ -120,13 +127,22 @@ Others, not covered in this training, for self-study:
 
 * Implementing your own tool
 
-* Implementing your own tool
+* Implementing your own tool (1/2)
 
 - Reimplement one of the tools you’ve developed in another language (bash scripts, Python, Ruby,  etc.)
 - Write a tool you will need in the near future, from scratch
 - If you have no idea, I'll provide some suggestions
 
 You've got 3 hours to complete and then we review together the results.
+
+* Implementing your own tool (2/2)
+
+Suggestions:
+
+- *Auto-backup*: if more than `N` files or `x` MB in a directory, create archive and put into S3 bucket
+- *Bookmarker*: HTTP service, backed by a database (Postgres, etc.), that supports storing and retrieval of URLs + metadata (title, size, tags)
+- *Simple* *chat*: allowing multiple users to chat (server role, client role)
+- *GitHub* *watchdog*: watch changes on a public git repo on GitHub, providing aggregate stats (number of commits, comments, issues, etc. per user)
 
 * Books
 

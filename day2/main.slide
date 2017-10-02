@@ -144,7 +144,13 @@ Suggestions:
 - *Simple* *chat*: allowing multiple users to chat (server role, client role)
 - *GitHub* *watchdog*: watch changes on a public git repo on GitHub, providing aggregate stats (number of commits, comments, issues, etc. per user)
 
-* Books
+* Resources
+
+* References
+
+- [[https://regex-golang.appspot.com/assets/html/index.html][RegExp tester]]
+- [[https://gobyexample.com][Go by example]]
+- [[https://play.golang.org][Go playground]]
 
 * Books
 
